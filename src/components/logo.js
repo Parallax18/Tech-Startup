@@ -2,7 +2,7 @@
 import { jsx, Image } from 'theme-ui';
 import { Link } from 'components/link';
 
-export default function Logo({ src, ...rest }) {
+export default function Logo({ src, width, ...rest }) {
   return (
     <Link
       path="/"
@@ -14,7 +14,7 @@ export default function Logo({ src, ...rest }) {
       }}
       {...rest}
     >
-      <Image src={src} alt="next js landng page logo" />
+      <Image src={src} alt="next js landng page logo" sx={{width: width}}/>
     </Link>
   );
 }

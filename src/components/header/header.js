@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Button } from 'theme-ui';
 import { keyframes } from '@emotion/core';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import Link  from "next/link"
 import Logo from 'components/logo';
 import LogoDark from 'assets/logo.svg';
 import MobileDrawer from './mobile-drawer';
@@ -14,7 +15,7 @@ export default function Header({ className }) {
           <Logo src={LogoDark}/>
           <Flex as="nav" sx={styles.nav}>
             {menuItems.map((item, index) => (
-              <Link
+              <ScrollLink
                 activeClass='active'
                 to={item.path}
                 spy={true}
@@ -24,13 +25,15 @@ export default function Header({ className }) {
                 key={index}
               >
                 {item.label}
-              </Link>
+              </ScrollLink>
             ))}
           </Flex>
 
-          <Button className="donate__btn" variant="secondary" aria-label="Get Started">
-            Get started
-          </Button>
+            <Link href='/getstarted' >
+              <Button className="donate__btn" variant="secondary" aria-label="Get Started">
+                Get started
+              </Button>
+            </Link>
           <MobileDrawer />
         </Container>
       </header>
