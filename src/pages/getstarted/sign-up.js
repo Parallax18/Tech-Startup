@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react'
 import Logo from 'components/logo';
 import LogoDark from 'assets/logo.svg';
-import {  Box, Flex, Heading, Text, Input, Button, Label } from 'theme-ui';
+import {  Box, Flex, Heading, Text, Input, Button, Label, Container } from 'theme-ui';
 import { FcGoogle } from 'react-icons/fc'
 import Link from 'next/link';
+import {authStyles as styles } from "styles/auth.styles"
 
 
-export default function SignUp({styles}) {
+export default function SignUp() {
   return (
-    <Fragment>
+    <Container sx={styles.container}>
         <Flex sx={styles.header}>
             <Logo src={LogoDark} width="300px"/>
             <Heading as="h4" sx={styles.header.sub}>Sign up for a startup account and get full featured integration for your projects</Heading>
@@ -62,6 +63,6 @@ export default function SignUp({styles}) {
             </Text>
             <Link href='/getstarted/login' style={{color: 'red', textDecoration: 'none'}}>Login</Link>
         </Flex>
-    </Fragment>
+    </Container>
   )
 }
