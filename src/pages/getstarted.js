@@ -25,26 +25,28 @@ export default function getstarted() {
             </Flex>
             <Box as="form" sx={styles.form}>
                 <Flex sx={styles.form.formGroup}>
-                    <Box sx={styles.form.formGroup.formField}>
+                    <Box sx={styles.form.formGroup.formField} className="mr-5">
                         <Label htmlFor="firstname" as='p'>First Name</Label>
-                        <Input type="text" name="firstname" id="firstname"/>
+                        <Input type="text" name="firstname" id="firstname" sx={{border: '1px solid #ccc'}}/>
                     </Box>
                     <Box sx={styles.form.formGroup.formField}>
                         <Label htmlFor="lastname" as='p'>Last Name</Label>
-                        <Input type="text" name="lastname" id="lastname"/>
+                        <Input type="text" name="lastname" id="lastname" sx={{border: '1px solid #ccc'}}/>
                     </Box>
                 </Flex>
-                <Box sx={styles.form.formGroup.formField}>
-                    <Label htmlFor="email" as='p'>Email</Label>
-                    <Input type="email" name="email" id="email"/>
-                </Box>
-                <Box sx={styles.form.formGroup.formField}>
-                    <Label htmlFor="email" as='p'>Set a password</Label>
-                    <Input type="password" name="email" id="email"/>
-                </Box>
+                <Flex sx={styles.form.formGroup}>
+                    <Box sx={styles.form.formGroup.formField}>
+                        <Label htmlFor="email" as='p'>Email</Label>
+                        <Input type="email" name="email" id="email" sx={{border: '1px solid #ccc'}}/>
+                    </Box>
+                    <Box sx={styles.form.formGroup.formField}>
+                        <Label htmlFor="email" as='p'>Set a password</Label>
+                        <Input type="password" name="email" id="email" sx={{border: '1px solid #ccc'}}/>
+                    </Box>
+                </Flex>
             </Box>
-            <Flex sx={styles.form.formGroup}>
-                <Box>
+            <Flex sx={{marginTop: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <Box sx={{width: '50%', color: 'grey'}}>
                     <Text as='p'>By clicking this button, you agree to our terms of service</Text>
                 </Box>
                 <Box>
@@ -53,11 +55,11 @@ export default function getstarted() {
             </Flex>
         </Flex>
 
-        <Flex sx={styles.form.formGroup}>
+        <Flex sx={{marginTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
             <Text as='p'>
-                Already have a <Logo src={LogoDark} /> account?
+                Already have an account?
             </Text>
-            <Link href='Log in'>Login</Link>
+            <Link href='Log in' sx={{color: 'red', textDecoration: 'none'}}>Login</Link>
         </Flex>
     </Container>
   )
@@ -70,7 +72,8 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        fontFamily: 'DM Sans'
+        fontFamily: 'DM Sans',
+        mt: 4
     },
     header: {
         flexDirection: 'column',
@@ -91,13 +94,13 @@ const styles = {
     formWrapper: {
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
 
     google:{
         padding: 3,
         position: 'relative',
-        width: '100%',
+        width: '70%',
         alignItems: 'center',
 
         '&:before': {
@@ -129,16 +132,17 @@ const styles = {
         width: '100%',
 
         formGroup: {
-            mb: 3,
-           
             justifyContent: 'space-between',
 
             formField: {
                 width: '100%',
+                mx: 3,
+                mb: 3
             }
         }
     },
     formBtn: {
-        background: '#00308F'
+        background: '#00308F',
+        padding: '1rem'
     }
 }
